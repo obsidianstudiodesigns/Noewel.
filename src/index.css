@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-script: 'Italianno', cursive;
+    --font-sans: 'Montserrat', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #2C2420;
+    background-color: #FAF7F2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-display-luxury {
+  font-family: 'Cinzel', serif;
+}
+
+.font-script-luxury {
+  font-family: 'Italianno', cursive;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #A87D38 0%, #D4AF37 40%, #ECC577 60%, #9F6F28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #B8924A, #E4C581, #A37930) 1;
+}
+
+.luxury-card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(168, 125, 56, 0.08), 0 4px 12px -2px rgba(44, 36, 32, 0.04);
+}
+
+.luxury-gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}

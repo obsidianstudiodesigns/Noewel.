@@ -1,0 +1,183 @@
+import { ServiceItem, TransformationItem } from '../types';
+
+export const BUSINESS_INFO = {
+  name: 'Noewel',
+  tagline: 'Professional Makeup & Tanning Artistry',
+  owner: 'Marcelle Klopper',
+  email: 'kloppermarcelle@gmail.com',
+  phoneDisplay: '063 227 1637',
+  phoneRaw: '27632271637',
+  address: 'Kiepersol Street, Kroonstad, Free State, South Africa',
+  city: 'Kroonstad',
+  country: 'South Africa',
+  hours: 'Monday - Saturday: 08:30 – 17:30 (By Appointment)',
+  instagram: '@noewel_beauty',
+};
+
+export const SERVICES: ServiceItem[] = [
+  {
+    id: 'spray-tan',
+    name: 'Professional Spray Tan',
+    category: 'tanning',
+    price: 'R380',
+    priceNote: 'per spray tan',
+    duration: '30 mins',
+    description: 'A flawless, natural-looking sun-kissed glow tailored precisely to your skin undertone. Enhances your natural contours and confidence without harsh streaks.',
+    features: [
+      'Natural golden glow with no orange undertones',
+      'Long-lasting results (7–10 days with proper aftercare)',
+      'Hydrating & nourishing botanical mist',
+      'Quick-drying & gentle on sensitive skin',
+      'Custom color consultation before application'
+    ],
+    popular: true,
+    image: 'images/spray-tan.jpg',
+    flyerHighlight: 'Sun-kissed GLOW · R380',
+  },
+  {
+    id: 'tanning-lotion',
+    name: 'Premium Sunbed Tanning Lotion',
+    category: 'retail',
+    price: 'R150',
+    priceNote: '100ml e 3.38 fl.oz',
+    description: 'Collagen Boost + UV Tan Enhancer. Formulated to boost collagen synthesis for a deeper, darker, long-lasting UV tan while intensely nourishing your skin.',
+    features: [
+      'Collagen Boost: Supports natural collagen for firmer, healthier skin',
+      'Enhanced Tanning: Accelerates melanin production for deeper color',
+      'Paraben Free & Cruelty Free formulation',
+      'Suitable for all skin types',
+      'Velvety quick-absorption finish'
+    ],
+    popular: false,
+    image: 'images/tanning-lotion.jpg',
+    flyerHighlight: 'Bestseller Retail · R150',
+  },
+  {
+    id: 'bridal-makeup',
+    name: 'Bridal Glamour & Consultation',
+    category: 'makeup',
+    price: 'R650',
+    priceNote: 'includes luxury lashes',
+    duration: '75 mins',
+    description: 'Timeless, romantic, and photo-ready bridal makeup designed to withstand tears of joy and last throughout your entire unforgettable wedding celebration.',
+    features: [
+      'Personalized skin prep & undertone analysis',
+      'High-definition waterproof & tear-resistant formula',
+      'Premium lightweight mink-effect lashes included',
+      'Complimentary bridal touch-up kit',
+      'Bridal trial sessions available'
+    ],
+    popular: true,
+    image: 'images/hero-mobile.jpg',
+    flyerHighlight: 'Bridal Artistry',
+  },
+  {
+    id: 'matric-farewell',
+    name: 'Matric Farewell / Prom Makeup',
+    category: 'makeup',
+    price: 'R450',
+    priceNote: 'includes lashes',
+    duration: '60 mins',
+    description: 'Youthful, luminous, and trend-focused glam tailored to complement your evening dress and photograph impeccably from every angle.',
+    features: [
+      'Flawless radiant or soft matte finish',
+      'Customized eye styling (warm sunset, soft shimmer, or smokey)',
+      'Custom-trimmed luxury flutter lashes',
+      'Contour & highlight sculpting for stage & flash photos',
+      'Setting spray lock for all-night dancing'
+    ],
+    popular: false,
+    image: 'images/before-after-2.jpg',
+    flyerHighlight: 'Special Occasion',
+  },
+  {
+    id: 'evening-event-glam',
+    name: 'Evening & Special Event Glam',
+    category: 'makeup',
+    price: 'R420',
+    priceNote: 'includes lashes',
+    duration: '50 mins',
+    description: 'Elevated, sophisticated makeup for galas, milestone birthdays, corporate dinners, or night outs when you want to look effortlessly striking.',
+    features: [
+      'Skin-perfecting airbrush-like coverage',
+      'Sophisticated eye design & precise winged eyeliner',
+      'Velvety lips in bespoke nude or bold color tones',
+      'All-day sweat and humidity resistance'
+    ],
+    popular: false,
+    image: 'images/before-after-3.jpg',
+  },
+  {
+    id: 'luxe-combo',
+    name: 'The Ultimate Luxe Glow (Tan + Full Glam)',
+    category: 'makeup',
+    price: 'R750',
+    priceNote: 'Save R80',
+    duration: '90 mins',
+    description: 'The definitive VIP experience. Combines our signature professional spray tan with full evening or bridal-quality event glam for the ultimate transformation.',
+    features: [
+      'Full Body Professional Spray Tan session (done 24-48h prior)',
+      'Full Face Luxury Event Makeup on event day',
+      'Deluxe lash set & setting treatment',
+      'Complete color harmony between body glow and facial tone'
+    ],
+    popular: true,
+    image: 'images/hero-desktop.jpg',
+    flyerHighlight: 'Signature Package',
+  },
+];
+
+export const WORKBOOK_TRANSFORMATIONS: TransformationItem[] = [
+  {
+    id: 'trans-1',
+    title: 'Mature Skin Radiance & Soft Smoky Definition',
+    subtitle: 'Classic Elegance & Lift',
+    category: 'Mature Elegance',
+    image: 'images/before-after-1.jpg',
+    description: 'Hydrating skincare prep with fine-line blurring primer, lightweight luminous satin foundation, lifted architectural brows, and a soft smudged taupe-bronze smokey eye paired with a satin nude lip.',
+    tags: ['Hydrated Finish', 'Eye Lift Effect', 'Age-Defying Glow', 'Soft Smokey'],
+    artistNote: 'For mature skin, the secret is strategic illumination rather than heavy powder. We emphasized her stunning blue eyes with soft bronze liner and kept the complexion breathing and radiant.',
+  },
+  {
+    id: 'trans-2',
+    title: 'Matric Farewell Radiant Sunset Glow',
+    subtitle: 'Youthful Glam & Defined Symmetry',
+    category: 'Matric Farewell',
+    image: 'images/before-after-2.jpg',
+    description: 'Color-correcting redness neutralization, flawless soft-matte porcelain base, warm rose gold eyelid tones with delicate winged cat-eye, feathery lashes, and a velvety peach pout.',
+    tags: ['Matric Farewell', 'Redness Neutralized', 'Rose Gold Eyes', 'Peachy Pout'],
+    artistNote: 'Her natural curls and smile are everything! We balanced the facial undertones to eliminate redness, sculpted gentle warmth into the cheekbones, and gave her eyes a radiant sunset sparkle.',
+  },
+  {
+    id: 'trans-3',
+    title: 'Evening Gala Glamour & Sculpted Symmetry',
+    subtitle: 'High-Definition Evening Transformation',
+    category: 'Red Carpet & Evening',
+    image: 'images/before-after-3.jpg',
+    description: 'Seamless skin tinting with strategic cream contouring along the cheekbones and jawline, deep cocoa transition shadows with champagne inner-corner highlights, and a luscious warm nude gloss.',
+    tags: ['High Definition', 'Cream Contour', 'Event Ready', 'Satin Finish'],
+    artistNote: 'Designed to photograph under dramatic indoor event lighting. The cream contour creates natural dimension without caking, ensuring she looks stunning both in person and on camera.',
+  },
+  {
+    id: 'trans-4',
+    title: 'Bronzed Studio Sophistication & Cat-Eye Lift',
+    subtitle: 'Golden Hour Red Carpet Allure',
+    category: 'Bridal & Occasion',
+    image: 'images/before-after-4.jpg',
+    description: 'Deep golden undertone enhancement with bronzed luminous highlights, precision smudged feline liner, groomed fluffy brows, and a high-shine caramel toffee lip lacquer.',
+    tags: ['Bronzed Goddess', 'Feline Liner', 'Studio Photography', 'Caramel Gloss'],
+    artistNote: 'A gorgeous celebration of warm undertones! We tied the complexion seamlessly with our spray tan glow on her shoulders, creating an unbroken luxury aesthetic from head to toe.',
+  },
+];
+
+export const ABOUT_STORY = {
+  title: 'A Beautiful New Beginning',
+  subtitle: 'Welcome to NOEWEL.',
+  lead: "After much thought, growth, and excitement for what lies ahead, I'm thrilled to introduce the new chapter of my beauty journey...",
+  quote: "Our new name represents more than a rebrand—it reflects our vision of timeless beauty, effortless elegance, and an elevated experience for every client who walks through our doors.",
+  promise: "While our name has changed, the passion, dedication, and attention to detail you've always known and trusted remain exactly the same.",
+  closing: "This is the beginning of something beautiful, and I can't wait to share it with you. Thank you for being part of this journey and for your continued support.",
+  signoff: 'With love,',
+  author: 'Marcelle Klopper',
+  brand: 'NOEWEL.',
+};
