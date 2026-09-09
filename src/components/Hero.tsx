@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Sparkles, Calendar, ArrowDown, Phone, MapPin, Eye, EyeOff } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/services';
-import desktopWallpaper from '../assets/images/landing page.jpg';
-import mobileWallpaper from '../assets/images/landing page mobile.jpg';
+import desktopWallpaper from '../assets/images/landing-page.jpg';
+import mobileWallpaper from '../assets/images/landing-page-mobile.jpg';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -14,13 +14,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-10"
+      className="relative isolate min-h-screen w-full flex flex-col justify-between overflow-hidden pt-24 pb-8 sm:pt-28 sm:pb-10"
     >
       {/* Responsive First Page Wallpaper:
-          - landing page mobile.jpg for mobile phones and devices (< 768px)
-          - landing page.jpg for desktop version wallpaper (>= 768px)
+          - landing-page-mobile.jpg for mobile phones and handheld devices (< 768px)
+          - landing-page.jpg for desktop and widescreen displays (>= 768px)
       */}
-      <div className="absolute inset-0 w-full h-full -z-10 bg-[#251E1A] overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 bg-[#251E1A] overflow-hidden pointer-events-none">
         <picture className="w-full h-full block">
           {/* Mobile phones and handheld devices */}
           <source media="(max-width: 767px)" srcSet={mobileWallpaper} />
@@ -30,6 +30,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             src={desktopWallpaper}
             alt="Noewel Professional Makeup & Tanning - First Page Wallpaper"
             className="w-full h-full object-cover object-center transform scale-100 transition-transform duration-1000"
+            loading="eager"
+            decoding="async"
             referrerPolicy="no-referrer"
             id="hero-first-page-wallpaper"
           />
@@ -39,17 +41,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div
           className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${
             showOverlay
-              ? 'bg-gradient-to-t from-black/75 via-black/30 to-black/45 md:from-black/70 md:via-black/25 md:to-black/35'
+              ? 'bg-gradient-to-t from-black/80 via-black/35 to-black/50 md:from-black/75 md:via-black/30 md:to-black/40'
               : 'bg-black/10'
           }`}
         />
       </div>
 
-      {/* Floating Wallpaper Controls (View Full Image Toggle) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end z-10 pt-2">
+      {/* Floating Wallpaper Controls (View Clean Image Toggle) */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end pt-2">
         <button
           onClick={() => setShowOverlay(!showOverlay)}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 hover:bg-black/60 text-white/90 hover:text-white backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider transition-all shadow-md cursor-pointer"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 hover:bg-black/70 text-white/90 hover:text-white backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider transition-all shadow-md cursor-pointer"
           title={showOverlay ? 'Hide text overlay to view full wallpaper' : 'Show booking details'}
           id="toggle-wallpaper-overlay-btn"
         >
@@ -70,14 +72,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
       {/* Main Interactive Content Layer */}
       <div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 my-auto transition-all duration-500 ${
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto transition-all duration-500 ${
           showOverlay ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none translate-y-4'
         }`}
       >
         <div className="max-w-3xl mx-auto md:mx-0 space-y-5 text-center md:text-left py-6">
           
           {/* Haute Beauty Location Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-[#E6C687]/40 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-[#E6C687]/40 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#E6C687]" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3DEB8]">
               Kroonstad, Free State · Haute Artistry
@@ -126,15 +128,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
           {/* Quick Rates Highlight Bar */}
           <div className="pt-4 border-t border-white/20 grid grid-cols-3 gap-3 max-w-md mx-auto md:mx-0 text-center md:text-left">
-            <div className="bg-black/30 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
+            <div className="bg-black/40 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
               <span className="block font-display-luxury text-base sm:text-lg font-bold text-[#F3DEB8]">R380</span>
               <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-white/80">Spray Tan</span>
             </div>
-            <div className="bg-black/30 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
+            <div className="bg-black/40 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
               <span className="block font-display-luxury text-base sm:text-lg font-bold text-[#F3DEB8]">R150</span>
               <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-white/80">Tanning Lotion</span>
             </div>
-            <div className="bg-black/30 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
+            <div className="bg-black/40 backdrop-blur-xs p-2.5 rounded-lg border border-white/10">
               <span className="block font-display-luxury text-base sm:text-lg font-bold text-[#F3DEB8]">From R420</span>
               <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-white/80">Special Glam</span>
             </div>
@@ -145,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
       {/* Bottom Bar: Studio Address & Scroll Indicator */}
       <div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 transition-all duration-500 ${
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full transition-all duration-500 ${
           showOverlay ? 'opacity-100' : 'opacity-80'
         }`}
       >
