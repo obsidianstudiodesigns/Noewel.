@@ -56,11 +56,6 @@ export const TanningLotionFeature: React.FC<TanningLotionFeatureProps> = ({ onOr
             <div className="lg:col-span-7 space-y-6">
               
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF7F2] border border-[#D8C09A] text-[11px] font-bold uppercase tracking-[0.2em] text-[#8C6D37]">
-                  <Sparkles className="w-3 h-3" />
-                  <span>Exclusive Formula · Retail Product</span>
-                </div>
-
                 <h3 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2A231E] leading-tight">
                   Premium Sunbed <br />
                   <span className="gold-gradient-text">Tanning Lotion</span>

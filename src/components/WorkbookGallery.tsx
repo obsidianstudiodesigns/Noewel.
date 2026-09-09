@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { WORKBOOK_TRANSFORMATIONS } from '../data/services';
-import { Sparkles, ZoomIn, X, MessageCircle, Heart, Tag } from 'lucide-react';
+import { ZoomIn, X, MessageCircle, Heart, Tag } from 'lucide-react';
 import { TransformationItem } from '../types';
 
 interface WorkbookGalleryProps {
@@ -23,11 +23,6 @@ export const WorkbookGallery: React.FC<WorkbookGalleryProps> = ({ onSelectLookFo
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D9BF97] bg-[#FAF7F2] text-[#8C6D37] text-xs font-semibold tracking-[0.2em] uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Client Workbook & Transformations</span>
-          </div>
-
           <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2420]">
             Before & After Artistry
           </h2>

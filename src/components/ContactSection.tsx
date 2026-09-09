@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle, Sparkles, Navigation, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Navigation, Send } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/services';
 
 interface ContactSectionProps {
@@ -13,10 +13,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D9C099] bg-[#FAF7F2] text-[#8C6D37] text-xs font-semibold tracking-[0.2em] uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Studio Location & Contact</span>
-          </div>
           <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2420]">
             Visit Noewel Beauty
           </h2>

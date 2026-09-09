@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SERVICES, BUSINESS_INFO } from '../data/services';
-import { Sun, Clock, Droplets, Sparkles, Check, MessageCircle, Calendar } from 'lucide-react';
+import { Sun, Clock, Droplets, Check, MessageCircle, Calendar } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 interface ServicesSectionProps {
@@ -22,10 +22,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-[#D9C099] bg-[#F7F2EB] text-[#8C6D37] text-xs font-semibold tracking-[0.2em] uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Curated Service Menu & Rates</span>
-          </div>
           <h2 className="font-display-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2420]">
             Artistry & Sun-Kissed Perfection
           </h2>
