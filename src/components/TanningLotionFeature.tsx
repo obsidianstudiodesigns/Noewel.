@@ -33,12 +33,17 @@ export const TanningLotionFeature: React.FC<TanningLotionFeatureProps> = ({ onOr
               <div className="relative max-w-sm w-full">
                 <div className="absolute -inset-3 rounded-3xl border border-[#D2AE7C]/60 -z-10 transform -rotate-2" />
 
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#D2AE7C] bg-gradient-to-b from-[#F7E7D6] via-[#F1DEC8] to-[#E6D0B6] aspect-[4/5] flex items-end justify-center pt-8 relative">
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#D9C1A2]/70 to-transparent" />
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#D2AE7C] bg-[#EADCCB] aspect-[3/4] relative flex items-center justify-center py-6">
                   <img
-                    src="images/sunbed-lotion-bottle.png"
-                    alt="Noewel Premium Sunbed Tanning Lotion 100ml bottle"
-                    className="relative h-[92%] w-auto object-contain drop-shadow-[0_18px_18px_rgba(80,50,20,0.3)] transform hover:scale-105 transition-transform duration-700"
+                    src="images/sunbed-lotion-mockup.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-80"
+                  />
+                  <img
+                    src="images/sunbed-lotion-mockup.jpg"
+                    alt="Noewel Premium Sunbed Tanning Lotion 100ml"
+                    className="relative h-full w-auto max-w-[85%] object-cover rounded-xl ring-1 ring-white/40 drop-shadow-[0_18px_22px_rgba(80,50,20,0.35)] transform hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 
@@ -201,12 +206,17 @@ export const TanningLotionFeature: React.FC<TanningLotionFeatureProps> = ({ onOr
               <div className="relative max-w-sm w-full">
                 <div className="absolute -inset-3 rounded-3xl border border-[#C9A27A]/60 -z-10 transform rotate-2" />
 
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#C9A27A] bg-gradient-to-b from-[#EBD3BD] via-[#E2C3A6] to-[#CFAE8C] aspect-[4/5] flex items-end justify-center pt-10 relative">
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#BF9C78]/70 to-transparent" />
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#C9A27A] bg-[#EADCCB] aspect-[3/4] relative flex items-center justify-center py-6">
                   <img
-                    src="images/hot-tingle-bottle.png"
-                    alt="Noewel HOT Tingle Tanning Lotion 100ml bottle"
-                    className="relative h-[90%] w-auto object-contain drop-shadow-[0_18px_18px_rgba(60,35,15,0.35)] transform hover:scale-105 transition-transform duration-700"
+                    src="images/hot-tingle-mockup.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-80"
+                  />
+                  <img
+                    src="images/hot-tingle-mockup.jpg"
+                    alt="Noewel HOT Tingle Tanning Lotion 100ml"
+                    className="relative h-full w-auto max-w-[85%] object-cover rounded-xl ring-1 ring-white/40 drop-shadow-[0_18px_22px_rgba(60,35,15,0.4)] transform hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 

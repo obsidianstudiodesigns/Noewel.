@@ -49,6 +49,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     popular: false,
     image: 'images/bridal-party.jpg',
+    imagePosition: 'object-[center_35%]',
     flyerHighlight: 'Wedding Party',
   },
   {
@@ -135,7 +136,7 @@ export const SERVICES: ServiceItem[] = [
       'Velvety quick-absorption finish'
     ],
     popular: false,
-    image: 'images/sunbed-lotion-bottle.png',
+    image: 'images/sunbed-lotion-mockup.jpg',
     imageFit: 'contain',
     flyerHighlight: 'Bestseller Retail · R150',
   },
@@ -154,7 +155,7 @@ export const SERVICES: ServiceItem[] = [
       'Please note: This hyper tingle lotion is not for sensitive skin'
     ],
     popular: false,
-    image: 'images/hot-tingle-bottle.png',
+    image: 'images/hot-tingle-mockup.jpg',
     imageFit: 'contain',
     flyerHighlight: 'Glow Hotter · R220',
   },

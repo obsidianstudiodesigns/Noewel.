@@ -96,23 +96,36 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               {service.image && (
                 <div
                   className={`w-full overflow-hidden relative ${
-                    service.imageFit === 'contain'
-                      ? 'h-56 bg-gradient-to-b from-[#F6E6D4] via-[#F3E3D0] to-[#FAF7F2] pt-6 pb-2'
-                      : 'h-48 bg-[#EFE8DD]'
+                    service.imageFit === 'contain' ? 'h-80 bg-[#EADCCB] flex items-center justify-center py-4' : 'h-48 bg-[#EFE8DD]'
                   }`}
                 >
-                  <img
-                    src={service.image}
-                    alt={service.name}
-                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${
-                      service.imageFit === 'contain'
-                        ? 'object-contain drop-shadow-[0_12px_14px_rgba(80,50,20,0.25)]'
-                        : `object-cover ${service.imagePosition ?? 'object-center'}`
-                    }`}
-                    referrerPolicy="no-referrer"
-                  />
-                  {service.imageFit !== 'contain' && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-transparent" />
+                  {service.imageFit === 'contain' ? (
+                    <>
+                      {/* Blurred backdrop of the same mockup fills the box; full mockup shown on top */}
+                      <img
+                        src={service.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover scale-125 blur-xl opacity-80"
+                      />
+                      <div className="absolute inset-0 bg-[#FAF7F2]/15" />
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className="relative h-full w-auto max-w-[85%] object-cover rounded-lg ring-1 ring-white/40 drop-shadow-[0_12px_16px_rgba(60,35,15,0.35)] group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className={`w-full h-full object-cover ${service.imagePosition ?? 'object-center'} group-hover:scale-105 transition-transform duration-500`}
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-transparent" />
+                    </>
                   )}
                 </div>
               )}
