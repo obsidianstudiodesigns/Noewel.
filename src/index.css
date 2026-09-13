@@ -33,13 +33,13 @@
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #A87D38 0%, #D4AF37 40%, #ECC577 60%, #9F6F28 100%);
+  background: linear-gradient(135deg, #A8752D 0%, #C08A45 40%, #E3AE66 60%, #7A4D12 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-border-gradient {
-  border-image: linear-gradient(to right, #B8924A, #E4C581, #A37930) 1;
+  border-image: linear-gradient(to right, #A8752D, #DBA054, #8A5E22) 1;
 }
 
 .luxury-card-shadow {
@@ -48,4 +48,16 @@
 
 .luxury-gold-glow {
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Primary button: metallic bronze-gold matched to the NOEWEL. logo */
+.btn-noewel-gold {
+  background-image: linear-gradient(135deg, #7A4D12 0%, #A8752D 35%, #C8914A 55%, #A8752D 75%, #8A5E22 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-noewel-gold:hover {
+  background-position: 100% 50%;
 }

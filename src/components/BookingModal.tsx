@@ -82,7 +82,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {/* Modal Header */}
         <div className="text-center space-y-2 mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F3E7D6] text-[#8C6D37] text-[10px] font-bold uppercase tracking-[0.2em]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F3E7D6] text-[#8A5E22] text-[10px] font-bold uppercase tracking-[0.2em]">
             <Sparkles className="w-3 h-3" />
             <span>Instant WhatsApp Booking</span>
           </div>
@@ -105,7 +105,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <select
               value={selectedServiceId}
               onChange={(e) => setSelectedServiceId(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+              className="w-full px-4 py-3 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
               id="booking-service-select"
             >
               {SERVICES.map((s) => (
@@ -120,7 +120,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs uppercase tracking-wider font-semibold text-[#4F4139] mb-1.5 flex items-center gap-1">
-                <User className="w-3 h-3 text-[#B88B43]" />
+                <User className="w-3 h-3 text-[#A8752D]" />
                 <span>Your Name *</span>
               </label>
               <input
@@ -129,14 +129,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 placeholder="e.g. Marcelle"
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
                 id="booking-client-name"
               />
             </div>
 
             <div>
               <label className="block text-xs uppercase tracking-wider font-semibold text-[#4F4139] mb-1.5 flex items-center gap-1">
-                <Phone className="w-3 h-3 text-[#B88B43]" />
+                <Phone className="w-3 h-3 text-[#A8752D]" />
                 <span>Your Phone Number</span>
               </label>
               <input
@@ -144,7 +144,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 placeholder="e.g. 082 123 4567"
                 value={clientPhone}
                 onChange={(e) => setClientPhone(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
                 id="booking-client-phone"
               />
             </div>
@@ -154,27 +154,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs uppercase tracking-wider font-semibold text-[#4F4139] mb-1.5 flex items-center gap-1">
-                <Calendar className="w-3 h-3 text-[#B88B43]" />
+                <Calendar className="w-3 h-3 text-[#A8752D]" />
                 <span>Preferred Date</span>
               </label>
               <input
                 type="date"
                 value={preferredDate}
                 onChange={(e) => setPreferredDate(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
                 id="booking-preferred-date"
               />
             </div>
 
             <div>
               <label className="block text-xs uppercase tracking-wider font-semibold text-[#4F4139] mb-1.5 flex items-center gap-1">
-                <Clock className="w-3 h-3 text-[#B88B43]" />
+                <Clock className="w-3 h-3 text-[#A8752D]" />
                 <span>Preferred Time</span>
               </label>
               <select
                 value={preferredTime}
                 onChange={(e) => setPreferredTime(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
                 id="booking-preferred-time"
               >
                 <option value="09:00 AM">09:00 AM (Morning)</option>
@@ -198,14 +198,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               placeholder="e.g. Matric farewell dress is emerald green, or bride requesting trial session..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#B88B43]"
+              className="w-full px-4 py-2.5 rounded-xl border border-[#D8C1A2] bg-[#FFFDF9] text-[#2C2420] text-sm focus:outline-none focus:ring-2 focus:ring-[#A8752D]"
               id="booking-notes"
             />
           </div>
 
           {/* Live Message Preview Accordion */}
           <div className="p-3.5 rounded-xl bg-[#F4EDE2] border border-[#DFCDB7] space-y-1.5">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[#8C6D37] block">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#8A5E22] block">
               Live WhatsApp Message Preview:
             </span>
             <p className="text-xs text-[#52443C] whitespace-pre-line font-mono bg-white/60 p-2.5 rounded-lg border border-[#E8D9C5] max-h-28 overflow-y-auto">
@@ -217,7 +217,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="pt-2 space-y-2">
             <button
               type="submit"
-              className="w-full py-4 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:brightness-105 text-white font-semibold text-xs uppercase tracking-[0.2em] shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.99]"
+              className="w-full py-4 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E]  text-white font-semibold text-xs uppercase tracking-[0.2em] shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.99]"
               id="submit-whatsapp-booking-btn"
             >
               <MessageCircle className="w-4 h-4 fill-white" />

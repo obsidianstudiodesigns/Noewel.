@@ -10,9 +10,16 @@ interface ServicesSectionProps {
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServiceForBooking }) => {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'tanning' | 'makeup'>('all');
 
-  const filteredServices = selectedFilter === 'all' 
-    ? SERVICES 
-    : SERVICES.filter((s) => s.category === selectedFilter || (selectedFilter === 'tanning' && s.id === 'luxe-combo'));
+  // Makeup services are always listed first, followed by tanning services & products
+  const categoryOrder = { makeup: 0, tanning: 1, retail: 2 } as const;
+  const filteredServices = (selectedFilter === 'all'
+    ? SERVICES
+    : SERVICES.filter((s) =>
+        selectedFilter === 'makeup'
+          ? s.category === 'makeup'
+          : s.category === 'tanning' || s.category === 'retail' || s.id === 'luxe-combo'
+      )
+  ).slice().sort((a, b) => categoryOrder[a.category] - categoryOrder[b.category]);
 
   const sprayTanService = SERVICES.find((s) => s.id === 'spray-tan')!;
 
@@ -30,122 +37,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           </p>
         </div>
 
-        {/* FEATURED HERO SPOTLIGHT: Flyer 2 - Professional Spray Tan */}
-        <div className="mb-20 rounded-3xl bg-gradient-to-br from-[#FAF5EE] via-[#F4ECE0] to-[#EFE4D4] border border-[#DFCBB0] p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
-          
-          {/* Subtle Background Glow */}
-          <div className="absolute -right-20 -top-20 w-80 h-80 bg-[#E8D4B8]/40 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* Left: Image from Flyer 2 */}
-            <div className="lg:col-span-5 relative">
-              <div className="rounded-2xl overflow-hidden border border-[#D8C09A] shadow-lg aspect-[3/4] relative bg-[#EADCCB]">
-                <img
-                  src="images/spray-tan.jpg"
-                  alt="Noewel Sun-kissed Glow Professional Spray Tan"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Floating Tag */}
-                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#FAF7F2]/95 border border-[#D6BC94] text-[10px] uppercase font-bold tracking-widest text-[#8C6D37]">
-                  Signature Treatment
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 text-white text-center">
-                  <span className="font-script-luxury text-3xl sm:text-4xl text-[#F9EAD1] drop-shadow-md">
-                    Sun-kissed GLOW
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Authentic Data Extracted from Flyer 2 */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              <div className="space-y-1">
-                <span className="text-xs uppercase font-semibold tracking-[0.25em] text-[#8C6D37]">
-                  NOEWEL. Luxury Beauty
-                </span>
-                <h3 className="font-display-luxury text-3xl sm:text-4xl font-bold text-[#2A231E]">
-                  Professional Spray Tan
-                </h3>
-                <p className="font-serif-luxury text-xl sm:text-2xl text-[#4A3D36] italic">
-                  "A flawless, natural looking tan that enhances your confidence."
-                </p>
-              </div>
-
-              {/* Price Callout */}
-              <div className="inline-flex items-baseline gap-3 py-2 px-6 rounded-2xl bg-[#FAF7F2] border border-[#D9C4A1] shadow-xs">
-                <span className="text-xs uppercase tracking-widest text-[#695B52]">Only</span>
-                <span className="font-display-luxury text-4xl sm:text-5xl font-bold text-[#8C6D37]">
-                  R380
-                </span>
-                <span className="text-xs uppercase tracking-wider text-[#695B52]">Per Spray Tan</span>
-              </div>
-
-              {/* 3 Pillar Features from Flyer 2 */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
-                  <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#9C7537]">
-                    <Sun className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
-                    Natural Glow
-                  </h4>
-                  <p className="text-[11px] text-[#695C53] leading-tight">
-                    Golden undertones with zero orange cast or patchy fade.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
-                  <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#9C7537]">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
-                    Long Lasting Results
-                  </h4>
-                  <p className="text-[11px] text-[#695C53] leading-tight">
-                    Lasts 7 to 10 days with effortless, natural wear-off.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
-                  <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#9C7537]">
-                    <Droplets className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
-                    Hydrating & Nourishing
-                  </h4>
-                  <p className="text-[11px] text-[#695C53] leading-tight">
-                    Infused with skin-loving botanicals for silky smooth touch.
-                  </p>
-                </div>
-              </div>
-
-              {/* Call to action */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                <button
-                  onClick={() => onSelectServiceForBooking(sprayTanService)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#B88B43] to-[#C9A255] text-white text-xs font-semibold uppercase tracking-[0.2em] shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.99] transition-all cursor-pointer"
-                  id="spray-tan-book-glow-btn"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Book Your Glow: 063 227 1637</span>
-                </button>
-
-                <span className="text-xs text-[#6B5D55]">
-                  Quick 30 min session · Preparation guide provided upon booking
-                </span>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
         {/* Filter Tabs */}
         <div className="flex justify-center mb-10">
           <div className="inline-flex p-1.5 rounded-full bg-[#EFE7DC] border border-[#DECBB3]">
@@ -160,16 +51,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               All Offerings
             </button>
             <button
-              onClick={() => setSelectedFilter('tanning')}
-              className={`px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all cursor-pointer ${
-                selectedFilter === 'tanning'
-                  ? 'bg-[#FAF7F2] text-[#2C2420] shadow-sm font-semibold'
-                  : 'text-[#6E6157] hover:text-[#2C2420]'
-              }`}
-            >
-              Tanning Services
-            </button>
-            <button
               onClick={() => setSelectedFilter('makeup')}
               className={`px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all cursor-pointer ${
                 selectedFilter === 'makeup'
@@ -179,38 +60,60 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             >
               Makeup Artistry
             </button>
+            <button
+              onClick={() => setSelectedFilter('tanning')}
+              className={`px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all cursor-pointer ${
+                selectedFilter === 'tanning'
+                  ? 'bg-[#FAF7F2] text-[#2C2420] shadow-sm font-semibold'
+                  : 'text-[#6E6157] hover:text-[#2C2420]'
+              }`}
+            >
+              Tanning Services
+            </button>
           </div>
         </div>
 
-        {/* Service Cards Grid */}
+        {/* Service Cards Grid - Makeup services display first */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service) => (
             <div
               key={service.id}
               className={`rounded-2xl bg-[#FAF7F2] border transition-all duration-300 flex flex-col justify-between overflow-hidden relative group hover:-translate-y-1 hover:shadow-xl ${
                 service.popular
-                  ? 'border-[#CBA55B] shadow-md ring-1 ring-[#CBA55B]/40'
+                  ? 'border-[#B98544] shadow-md ring-1 ring-[#B98544]/40'
                   : 'border-[#E7D7C1] shadow-xs'
               }`}
               id={`service-card-${service.id}`}
             >
               {/* Popular / Flyer Badge */}
               {service.flyerHighlight && (
-                <div className="absolute top-3 right-3 z-10 px-3 py-1 rounded-full bg-[#B88B43] text-white text-[10px] font-bold uppercase tracking-widest shadow-xs">
+                <div className="absolute top-3 right-3 z-10 px-3 py-1 rounded-full bg-[#A8752D] text-white text-[10px] font-bold uppercase tracking-widest shadow-xs">
                   {service.flyerHighlight}
                 </div>
               )}
 
               {/* Service Thumbnail Header */}
               {service.image && (
-                <div className="h-48 w-full overflow-hidden bg-[#EFE8DD] relative">
+                <div
+                  className={`w-full overflow-hidden relative ${
+                    service.imageFit === 'contain'
+                      ? 'h-56 bg-gradient-to-b from-[#F6E6D4] via-[#F3E3D0] to-[#FAF7F2] pt-6 pb-2'
+                      : 'h-48 bg-[#EFE8DD]'
+                  }`}
+                >
                   <img
                     src={service.image}
                     alt={service.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${
+                      service.imageFit === 'contain'
+                        ? 'object-contain drop-shadow-[0_12px_14px_rgba(80,50,20,0.25)]'
+                        : `object-cover ${service.imagePosition ?? 'object-center'}`
+                    }`}
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-transparent" />
+                  {service.imageFit !== 'contain' && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-transparent" />
+                  )}
                 </div>
               )}
 
@@ -223,9 +126,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       {service.name}
                     </h3>
                   </div>
+                  {service.subtitle && (
+                    <p className="text-[11px] uppercase tracking-[0.15em] text-[#8A5E22] font-medium -mt-1">
+                      {service.subtitle}
+                    </p>
+                  )}
 
                   <div className="flex items-baseline gap-2 pt-1">
-                    <span className="font-display-luxury text-2xl font-bold text-[#8C6D37]">
+                    <span className="font-display-luxury text-2xl font-bold text-[#8A5E22]">
                       {service.price}
                     </span>
                     {service.priceNote && (
@@ -247,13 +155,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                 {/* Features Checklist */}
                 <div className="space-y-2 pt-2 border-t border-[#EFE5D8]">
-                  <p className="text-[10px] uppercase tracking-wider font-semibold text-[#8C6D37]">
+                  <p className="text-[10px] uppercase tracking-wider font-semibold text-[#8A5E22]">
                     Includes:
                   </p>
                   <ul className="space-y-1.5">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-xs text-[#4F443D]">
-                        <Check className="w-3.5 h-3.5 text-[#B88B43] shrink-0 mt-0.5" />
+                        <Check className="w-3.5 h-3.5 text-[#A8752D] shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -264,7 +172,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 <div className="pt-4">
                   <button
                     onClick={() => onSelectServiceForBooking(service)}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#FAF7F2] border border-[#CBA55B] text-[#7A5B22] hover:bg-[#B88B43] hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#FAF7F2] border border-[#B98544] text-[#7F5319] hover:bg-[#A8752D] hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
                     id={`book-btn-${service.id}`}
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
@@ -277,6 +185,124 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             </div>
           ))}
         </div>
+
+        {/* FEATURED SPOTLIGHT: Professional Spray Tan - Displayed after makeup services or when filtering tanning */}
+        {selectedFilter !== 'makeup' && (
+          <div className="mt-16 rounded-3xl bg-gradient-to-br from-[#FAF5EE] via-[#F4ECE0] to-[#EFE4D4] border border-[#DFCBB0] p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
+            
+            {/* Subtle Background Glow */}
+            <div className="absolute -right-20 -top-20 w-80 h-80 bg-[#E8D4B8]/40 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Left: Image */}
+              <div className="lg:col-span-5 relative">
+                <div className="rounded-2xl overflow-hidden border border-[#D8C09A] shadow-lg aspect-[3/4] relative bg-[#EADCCB]">
+                  <img
+                    src="images/spray-tan.jpg"
+                    alt="Noewel Sun-kissed Glow Professional Spray Tan"
+                    className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Floating Tag */}
+                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#FAF7F2]/95 border border-[#D6BC94] text-[10px] uppercase font-bold tracking-widest text-[#8A5E22]">
+                    Signature Treatment
+                  </div>
+
+                  <div className="absolute bottom-4 left-4 right-4 text-white text-center">
+                    <span className="font-script-luxury text-3xl sm:text-4xl text-[#F6E0C2] drop-shadow-md">
+                      Sun-kissed GLOW
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Spray Tan Details */}
+              <div className="lg:col-span-7 space-y-6">
+                
+                <div className="space-y-1">
+                  <span className="text-xs uppercase font-semibold tracking-[0.25em] text-[#8A5E22]">
+                    NOEWEL. Luxury Beauty
+                  </span>
+                  <h3 className="font-display-luxury text-3xl sm:text-4xl font-bold text-[#2A231E]">
+                    Professional Spray Tan
+                  </h3>
+                  <p className="font-serif-luxury text-xl sm:text-2xl text-[#4A3D36] italic">
+                    "A flawless, natural looking tan that enhances your confidence."
+                  </p>
+                </div>
+
+                {/* Price Callout */}
+                <div className="inline-flex items-baseline gap-3 py-2 px-6 rounded-2xl bg-[#FAF7F2] border border-[#D9C4A1] shadow-xs">
+                  <span className="text-xs uppercase tracking-widest text-[#695B52]">Only</span>
+                  <span className="font-display-luxury text-4xl sm:text-5xl font-bold text-[#8A5E22]">
+                    {sprayTanService.price}
+                  </span>
+                  <span className="text-xs uppercase tracking-wider text-[#695B52]">Per Spray Tan</span>
+                </div>
+
+                {/* 3 Pillar Features */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                  <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
+                    <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#936425]">
+                      <Sun className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
+                      Natural Glow
+                    </h4>
+                    <p className="text-[11px] text-[#695C53] leading-tight">
+                      Golden undertones with zero orange cast or patchy fade.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
+                    <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#936425]">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
+                      Long Lasting Results
+                    </h4>
+                    <p className="text-[11px] text-[#695C53] leading-tight">
+                      Lasts 7 to 10 days with effortless, natural wear-off.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-[#FAF7F2]/90 border border-[#E2D1BD] text-center space-y-2">
+                    <div className="w-10 h-10 mx-auto rounded-full bg-[#F3E7D6] flex items-center justify-center text-[#936425]">
+                      <Droplets className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-display-luxury text-xs font-bold uppercase tracking-wider text-[#3B3029]">
+                      Hydrating & Nourishing
+                    </h4>
+                    <p className="text-[11px] text-[#695C53] leading-tight">
+                      Infused with skin-loving botanicals for silky smooth touch.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Call to action */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                  <button
+                    onClick={() => onSelectServiceForBooking(sprayTanService)}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full btn-noewel-gold text-white text-xs font-semibold uppercase tracking-[0.2em] shadow-md hover:shadow-lg  active:scale-[0.99] transition-all cursor-pointer"
+                    id="spray-tan-book-glow-btn"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Book Your Glow: 063 227 1637</span>
+                  </button>
+
+                  <span className="text-xs text-[#6B5D55]">
+                    Quick 30 min session · Preparation guide provided upon booking
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

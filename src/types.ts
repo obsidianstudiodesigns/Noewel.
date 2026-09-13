@@ -1,6 +1,7 @@
 export interface ServiceItem {
   id: string;
   name: string;
+  subtitle?: string;
   category: 'tanning' | 'makeup' | 'retail';
   price: string;
   priceNote?: string;
@@ -9,18 +10,14 @@ export interface ServiceItem {
   features: string[];
   popular?: boolean;
   image?: string;
+  imageFit?: 'cover' | 'contain';
+  imagePosition?: string;
   flyerHighlight?: string;
 }
 
 export interface TransformationItem {
   id: string;
-  title: string;
-  subtitle: string;
-  category: 'Bridal & Occasion' | 'Matric Farewell' | 'Mature Elegance' | 'Red Carpet & Evening';
   image: string;
-  description: string;
-  tags: string[];
-  artistNote: string;
 }
 
 export interface BookingFormState {

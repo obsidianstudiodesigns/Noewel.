@@ -45,12 +45,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           
           {/* Editorial Heading */}
           <div className="space-y-2 drop-shadow-md">
-            <h2 className="font-script-luxury text-3xl sm:text-5xl text-[#F5DCAC] italic font-normal tracking-wide">
+            <h2 className="font-script-luxury text-3xl sm:text-5xl text-[#F3D3A6] italic font-normal tracking-wide">
               Timeless Radiance & Natural Glow
             </h2>
             <h1 className="font-display-luxury text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
               Professional Makeup <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F7E2B8] via-[#E2B768] to-[#CD9A48]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5DDB8] via-[#DBA054] to-[#B98544]">
                 & Sun-Kissed Tanning
               </span>
             </h1>
@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
           {/* Luxury Description */}
           <p className="text-sm sm:text-base lg:text-lg text-white/90 font-light leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-sm">
-            Welcome to <strong className="font-semibold text-white">NOEWEL</strong> by Marcelle Klopper. 
+            Welcome to <strong className="font-semibold text-white">NOEWEL</strong> by Marcelle Van Wyk. 
             Bespoke bridal artistry, matric farewell glam, and natural streak-free spray tanning 
             in Kroonstad crafted to let your natural beauty illuminate.
           </p>
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3.5 pt-2">
             <button
               onClick={onOpenBooking}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#C29548] via-[#D8AD5D] to-[#BF9144] text-white text-xs font-semibold uppercase tracking-[0.22em] shadow-xl hover:shadow-2xl hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full btn-noewel-gold text-white text-xs font-semibold uppercase tracking-[0.22em] shadow-xl hover:shadow-2xl  active:scale-[0.99] transition-all cursor-pointer"
               id="hero-book-glow-btn"
             >
               <Calendar className="w-4 h-4" />
@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           
           <div className="flex items-center gap-4 text-[11px] tracking-wider uppercase">
             <span className="inline-flex items-center gap-1.5 text-white/90">
-              <MapPin className="w-3.5 h-3.5 text-[#E6C687]" />
+              <MapPin className="w-3.5 h-3.5 text-[#E2B47A]" />
               {BUSINESS_INFO.address}, {BUSINESS_INFO.city}
             </span>
             <span className="hidden sm:inline text-white/40">|</span>
@@ -100,13 +100,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               href={`tel:${BUSINESS_INFO.phoneRaw}`}
               className="hidden sm:inline-flex items-center gap-1.5 hover:text-white transition-colors text-white/90"
             >
-              <Phone className="w-3.5 h-3.5 text-[#E6C687]" />
+              <Phone className="w-3.5 h-3.5 text-[#E2B47A]" />
               {BUSINESS_INFO.phoneDisplay}
             </a>
           </div>
 
           <span className="text-[11px] tracking-widest uppercase text-white/60">
-            Marcelle Klopper · Kroonstad
+            Marcelle Van Wyk · Kroonstad
           </span>
         </div>
       </div>

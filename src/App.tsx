@@ -34,15 +34,13 @@ export default function App() {
     setIsBookingModalOpen(true);
   };
 
-  const handleSelectLookForBooking = (lookTitle: string) => {
-    setSelectedServiceId('evening-event-glam');
-    setInitialBookingNotes(`I saw the "${lookTitle}" in your Client Workbook and would love a similar look!`);
-    setIsBookingModalOpen(true);
-  };
-
-  const handleOrderLotion = () => {
-    setSelectedServiceId('tanning-lotion');
-    setInitialBookingNotes('I would like to order the Premium Sunbed Tanning Lotion (R150, 100ml).');
+  const handleOrderLotion = (productId: 'tanning-lotion' | 'hot-tingle-lotion') => {
+    setSelectedServiceId(productId);
+    setInitialBookingNotes(
+      productId === 'hot-tingle-lotion'
+        ? 'I would like to order the HOT Tingle Tanning Lotion (R220, 100ml).'
+        : 'I would like to order the Premium Sunbed Tanning Lotion (R150, 100ml).'
+    );
     setIsBookingModalOpen(true);
   };
 
@@ -63,7 +61,7 @@ export default function App() {
         <ServicesSection onSelectServiceForBooking={handleSelectServiceForBooking} />
 
         {/* Client Workbook (Before & After Transformations 1 - 4) */}
-        <WorkbookGallery onSelectLookForBooking={handleSelectLookForBooking} />
+        <WorkbookGallery />
 
         {/* Exclusive Retail Product Feature (Flyer 1 Sunbed Tanning Lotion) */}
         <TanningLotionFeature onOrderLotion={handleOrderLotion} />

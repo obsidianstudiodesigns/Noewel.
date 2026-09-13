@@ -24,71 +24,73 @@ export const Footer: React.FC = () => {
               Timeless beauty, effortless elegance, and elevated professional makeup and spray tanning artistry in Kroonstad, South Africa.
             </p>
             <div className="pt-2 text-[11px] text-[#8C7D72]">
-              Founded by Marcelle Klopper.
+              Founded by Marcelle Van Wyk.
             </div>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="space-y-3">
-            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C9A255]">
+            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C08A45]">
               Explore
             </h4>
             <ul className="space-y-2 text-xs text-[#B5A599]">
               <li>
-                <a href="#home" className="hover:text-[#E2C582] transition-colors">Home Landing</a>
+                <a href="#home" className="hover:text-[#DDB27A] transition-colors">Home Landing</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#E2C582] transition-colors">A Beautiful New Beginning (About)</a>
+                <a href="#about" className="hover:text-[#DDB27A] transition-colors">A Beautiful New Beginning (About)</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#E2C582] transition-colors">Professional Spray Tan (R380)</a>
+                <a href="#services" className="hover:text-[#DDB27A] transition-colors">Professional Spray Tan (R420)</a>
               </li>
               <li>
-                <a href="#workbook" className="hover:text-[#E2C582] transition-colors">Client Workbook (Before & After)</a>
+                <a href="#workbook" className="hover:text-[#DDB27A] transition-colors">Client Workbook (Before & After)</a>
               </li>
               <li>
-                <a href="#tanning-lotion-feature" className="hover:text-[#E2C582] transition-colors">Sunbed Tanning Lotion (R150)</a>
+                <a href="#tanning-lotion-feature" className="hover:text-[#DDB27A] transition-colors">Tanning Lotions (R150 / R220)</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#E2C582] transition-colors">Kroonstad Studio Location</a>
+                <a href="#contact" className="hover:text-[#DDB27A] transition-colors">Kroonstad Studio Location</a>
               </li>
             </ul>
           </div>
 
           {/* Services & Offerings */}
           <div className="space-y-3">
-            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C9A255]">
+            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C08A45]">
               Artistry Menu
             </h4>
             <ul className="space-y-2 text-xs text-[#B5A599]">
-              <li>Professional Spray Tan — <span className="text-[#E2C582]">R380</span></li>
-              <li>Sunbed Tanning Lotion (100ml) — <span className="text-[#E2C582]">R150</span></li>
-              <li>Bridal Glam & Trial Consultation — <span className="text-[#E2C582]">R650</span></li>
-              <li>Matric Farewell Glam — <span className="text-[#E2C582]">R450</span></li>
-              <li>Evening & Event Makeup — <span className="text-[#E2C582]">R420</span></li>
-              <li>Luxe Glow (Tan + Full Glam) — <span className="text-[#E2C582]">R750</span></li>
+              <li>Bridal Glamour & Consultation — <span className="text-[#DDB27A]">R1400</span></li>
+              <li>Bridal Party & Mothers — <span className="text-[#DDB27A]">R550</span></li>
+              <li>Matric Farewell — <span className="text-[#DDB27A]">R600</span></li>
+              <li>Evening & Special Event Glam — <span className="text-[#DDB27A]">R500</span></li>
+              <li>Ultimate Luxe Glow Package — <span className="text-[#DDB27A]">R750</span></li>
+              <li>Professional Spray Tan — <span className="text-[#DDB27A]">R420</span></li>
+              <li>Sunbed Tanning Lotion (100ml) — <span className="text-[#DDB27A]">R150</span></li>
+              <li>HOT Tingle Tanning Lotion (100ml) — <span className="text-[#DDB27A]">R220</span></li>
             </ul>
           </div>
 
           {/* Studio Contact */}
           <div className="space-y-3">
-            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C9A255]">
+            <h4 className="font-display-luxury text-xs font-bold uppercase tracking-[0.2em] text-[#C08A45]">
               Contact Details
             </h4>
             <ul className="space-y-2.5 text-xs text-[#B5A599]">
               <li className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#C9A255] shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#C08A45] shrink-0 mt-0.5" />
                 <span>Kiepersol Street, Kroonstad, South Africa</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#C9A255] shrink-0" />
-                <a href={`tel:${BUSINESS_INFO.phoneRaw}`} className="hover:text-[#E2C582] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#C08A45] shrink-0" />
+                <a href={`tel:${BUSINESS_INFO.phoneRaw}`} className="hover:text-[#DDB27A] transition-colors">
                   {BUSINESS_INFO.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#C9A255] shrink-0" />
-                <a href={`mailto:${BUSINESS_INFO.email}`} className="hover:text-[#E2C582] transition-colors break-all">
+                <Mail className="w-3.5 h-3.5 text-[#C08A45] shrink-0" />
+                <a href={`mailto:${BUSINESS_INFO.email}`} className="hover:text-[#DDB27A] transition-colors break-all">
                   {BUSINESS_INFO.email}
                 </a>
               </li>
@@ -97,7 +99,7 @@ export const Footer: React.FC = () => {
             <div className="pt-3">
               <button
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#A8998C] hover:text-[#C9A255] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#A8998C] hover:text-[#C08A45] transition-colors cursor-pointer"
               >
                 <span>Back to top</span>
                 <ArrowUp className="w-3.5 h-3.5" />
@@ -119,7 +121,7 @@ export const Footer: React.FC = () => {
               href="https://obsidianstudiodesigns.github.io/Noewel./"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C9A255] hover:underline font-medium"
+              className="text-[#C08A45] hover:underline font-medium"
             >
               Obsidian Studio Designs
             </a>

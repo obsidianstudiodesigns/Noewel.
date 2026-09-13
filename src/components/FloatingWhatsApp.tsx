@@ -11,7 +11,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
       {/* Floating Tooltip */}
       <div className="hidden sm:block px-3 py-1.5 rounded-full bg-[#FAF7F2] border border-[#D6BC94] text-[#2C2420] text-xs shadow-lg animate-pulse">
-        <span className="font-medium text-[#8C6D37]">Book Your Glow</span> · WhatsApp
+        <span className="font-medium text-[#8A5E22]">Book Your Glow</span> · WhatsApp
       </div>
 
       {/* Floating WhatsApp Action Button */}
