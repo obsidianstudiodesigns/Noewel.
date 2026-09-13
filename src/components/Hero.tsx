@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           <div className="flex items-center gap-4 text-[11px] tracking-wider uppercase">
             <span className="inline-flex items-center gap-1.5 text-white/90">
               <MapPin className="w-3.5 h-3.5 text-[#E2B47A]" />
-              {BUSINESS_INFO.address}, {BUSINESS_INFO.city}
+              {BUSINESS_INFO.address}
             </span>
             <span className="hidden sm:inline text-white/40">|</span>
             <a

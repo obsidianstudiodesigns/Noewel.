@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#B5A599]">
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#C08A45] shrink-0 mt-0.5" />
-                <span>Kiepersol Street, Kroonstad, South Africa</span>
+                <span>2 Kiepersol Street, Jordania, Kroonstad, South Africa</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#C08A45] shrink-0" />
@@ -107,6 +107,21 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Legal Links & Business Disclosure */}
+        <div className="pt-8 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#3D332D] pb-8">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] uppercase tracking-wider" aria-label="Legal">
+            <a href="#privacy-policy" className="text-[#B5A599] hover:text-[#DDB27A] transition-colors">Privacy Policy (POPIA)</a>
+            <a href="#terms-and-conditions" className="text-[#B5A599] hover:text-[#DDB27A] transition-colors">Terms & Conditions</a>
+            <a href="#cookie-notice" className="text-[#B5A599] hover:text-[#DDB27A] transition-colors">Cookie Notice</a>
+            <a href="#privacy-policy" className="text-[#B5A599] hover:text-[#DDB27A] transition-colors">Information Officer: {BUSINESS_INFO.informationOfficer}</a>
+          </nav>
+          <p className="text-[11px] text-[#8C7D72] md:text-right max-w-md">
+            {BUSINESS_INFO.legalStatus}
+            {BUSINESS_INFO.registrationNumber && <> Reg. No. {BUSINESS_INFO.registrationNumber}.</>}
+            {BUSINESS_INFO.vatNumber && <> VAT No. {BUSINESS_INFO.vatNumber}.</>}
+          </p>
         </div>
 
         {/* Bottom Copyright & Credit Row */}

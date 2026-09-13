@@ -24,6 +24,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [preferredDate, setPreferredDate] = useState('');
   const [preferredTime, setPreferredTime] = useState('11:00 AM');
   const [notes, setNotes] = useState(initialNotes);
+  const [privacyConsent, setPrivacyConsent] = useState(false);
 
   useEffect(() => {
     if (initialServiceId) {
@@ -48,7 +49,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     if (preferredDate) msg += `📅 *Preferred Date:* ${preferredDate}\n`;
     if (preferredTime) msg += `⏰ *Preferred Time:* ${preferredTime}\n`;
     if (notes.trim()) msg += `📝 *Notes / Occasion:* ${notes.trim()}\n`;
-    msg += `\n📍 *Location:* Kiepersol Street, Kroonstad\n`;
+    msg += `\n📍 *Location:* 2 Kiepersol Street, Jordania, Kroonstad\n`;
     msg += `Thank you! Looking forward to confirming my appointment.`;
     return msg;
   };
@@ -212,6 +213,25 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {constructWhatsAppMessage()}
             </p>
           </div>
+
+          {/* POPIA Consent */}
+          <label className="flex items-start gap-2.5 text-xs text-[#52443C] leading-relaxed cursor-pointer">
+            <input
+              type="checkbox"
+              required
+              checked={privacyConsent}
+              onChange={(e) => setPrivacyConsent(e.target.checked)}
+              className="mt-0.5 w-4 h-4 accent-[#A8752D] shrink-0 cursor-pointer"
+              id="booking-privacy-consent"
+            />
+            <span>
+              I consent to NOEWEL. using my details to respond to my inquiry and manage my booking, and understand the
+              message is sent via WhatsApp. See the{' '}
+              <a href="#privacy-policy" className="underline text-[#8A5E22]">Privacy Policy</a> and{' '}
+              <a href="#terms-and-conditions" className="underline text-[#8A5E22]">Terms</a>. If the client is under 18,
+              a parent or guardian must make or approve this booking. *
+            </span>
+          </label>
 
           {/* Submit Action */}
           <div className="pt-2 space-y-2">
