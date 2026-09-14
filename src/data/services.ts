@@ -4,7 +4,7 @@ export const BUSINESS_INFO = {
   name: 'Noewel',
   tagline: 'Professional Makeup & Tanning Artistry',
   owner: 'Marcelle Van Wyk',
-  email: 'kloppermarcelle@gmail.com',
+  email: 'marcelle@noewel.co.za',
   phoneDisplay: '063 227 1637',
   phoneRaw: '27632271637',
   address: '2 Kiepersol Street, Jordania, Kroonstad, Free State, South Africa',
@@ -12,7 +12,7 @@ export const BUSINESS_INFO = {
   country: 'South Africa',
   hours: 'Monday - Saturday: 08:30 – 17:30 (By Appointment)',
   instagram: '@noewel_beauty',
-  website: 'https://obsidianstudiodesigns.github.io/Noewel./',
+  website: 'www.noewel.co.za',
   // Legal / ECT Act s43 disclosure — update once confirmed.
   // Registration & VAT numbers are only shown on the site when filled in.
   legalStatus: 'Owner-operated beauty business (sole proprietor) trading as NOEWEL.',
