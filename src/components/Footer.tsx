@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-1">
             <span>Designed & Built with elegance for Noewel by</span>
             <a
-              href="https://obsidianstudiodesigns.github.io/Noewel./"
+              href="https://www.obsidianstudiodesigns.co.za"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#C08A45] hover:underline font-medium"
