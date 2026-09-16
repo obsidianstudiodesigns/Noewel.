@@ -27,7 +27,7 @@ export const WorkbookGallery: React.FC = () => {
           className={`grid gap-8 lg:gap-10 ${
             WORKBOOK_TRANSFORMATIONS.length === 1
               ? 'grid-cols-1 max-w-2xl mx-auto'
-              : 'grid-cols-1 md:grid-cols-2'
+              : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
           }`}
         >
           {WORKBOOK_TRANSFORMATIONS.map((item) => (

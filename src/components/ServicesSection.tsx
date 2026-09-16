@@ -102,13 +102,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   }`}
                 >
                   {service.imageFit === 'full' ? (
-                    // Full flyer, shown uncropped
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="block w-full h-auto group-hover:scale-[1.03] transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
+                    // Full flyer, uncropped, in a fixed-size box so all flyer cards match
+                    <div className="relative aspect-[5/6] w-full flex items-center justify-center">
+                      <img
+                        src={service.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-70"
+                      />
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className="relative w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
                   ) : (
                     <>
                       <img

@@ -39,8 +39,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     popular: true,
     image: 'images/bridal-glamour.jpg',
-    imagePosition: 'object-[center_22%]',
-    imageHeight: 'h-96',
+    imagePosition: 'object-[center_18%]',
     flyerHighlight: 'Bridal Artistry',
   },
   {
@@ -173,7 +172,12 @@ export const SERVICES: ServiceItem[] = [
 
 export const WORKBOOK_TRANSFORMATIONS: TransformationItem[] = [
   { id: 'trans-1', image: 'images/before-after-1.jpg' },
-  // More before & after images will be added later
+  { id: 'trans-2', image: 'images/before-after-2.jpg' },
+  { id: 'trans-3', image: 'images/before-after-3.jpg' },
+  { id: 'trans-4', image: 'images/before-after-4.jpg' },
+  { id: 'trans-5', image: 'images/before-after-5.jpg' },
+  { id: 'trans-6', image: 'images/before-after-6.jpg' },
+  { id: 'trans-7', image: 'images/before-after-7.jpg' },
 ];
 
 export const ABOUT_STORY = {
