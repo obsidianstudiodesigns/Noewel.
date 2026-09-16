@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-[#2A1F18] font-medium">
               <li>Bridal Glamour & Consultation — <span className="text-[#6B4410]">R1400</span></li>
               <li>Bridal Party & Mothers — <span className="text-[#6B4410]">R550</span></li>
-              <li>Matric Farewell — <span className="text-[#6B4410]">R600</span></li>
+              <li>Matric Farewell — <span className="text-[#6B4410]">R650</span></li>
               <li>Evening & Special Event Glam — <span className="text-[#6B4410]">R500</span></li>
               <li>Ultimate Luxe Glow Package — <span className="text-[#6B4410]">R750</span></li>
               <li>Professional Spray Tan — <span className="text-[#6B4410]">R420</span></li>

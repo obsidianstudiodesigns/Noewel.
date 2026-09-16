@@ -65,7 +65,7 @@ export const SERVICES: ServiceItem[] = [
     id: 'matric-farewell',
     name: 'Matric Farewell',
     category: 'makeup',
-    price: 'R600',
+    price: 'R650',
     priceNote: 'excl. trial',
     description: 'Youthful, luminous, and trend-focused glam tailored to complement your evening dress and photograph impeccably from every angle.',
     features: [
@@ -73,7 +73,8 @@ export const SERVICES: ServiceItem[] = [
       'Eyeshadow to match your dress',
       'Custom-trimmed luxury flutter lashes',
       'Contour & highlight sculpting for stage & flash photos',
-      'Setting spray lock for all-night dancing'
+      'Setting spray lock for all-night dancing',
+      'Trial @ R400 extra'
     ],
     popular: false,
     image: 'images/matric-farewell.jpg',
