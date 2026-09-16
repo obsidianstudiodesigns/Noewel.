@@ -96,6 +96,24 @@ export const SERVICES: ServiceItem[] = [
     image: 'images/evening-glam.jpg',
   },
   {
+    id: 'mini-makeover',
+    name: 'Mini Makeover',
+    category: 'makeup',
+    price: 'R750',
+    description: 'The Mini Makeover includes full-glam makeup and professional hair styling, tailored to complement your features, outfit and personal style. From flawless skin and beautifully defined eyes to polished, camera-ready hair, every detail is carefully considered to create a sophisticated and long-lasting look.',
+    features: [
+      'Full-glam makeup application',
+      'Professional hair styling',
+      'Flawless skin & beautifully defined eyes',
+      'Polished, camera-ready hair',
+      'Tailored to your features, outfit & personal style'
+    ],
+    popular: false,
+    image: 'images/mini-makeover.jpg',
+    imagePosition: 'object-[center_22%]',
+    flyerHighlight: 'Makeup + Hair',
+  },
+  {
     id: 'luxe-combo',
     name: 'The Ultimate Luxe Glow Package (Full Glam Makeup + Spray Tan)',
     category: 'makeup',
