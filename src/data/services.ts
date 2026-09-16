@@ -76,7 +76,7 @@ export const SERVICES: ServiceItem[] = [
       'Setting spray lock for all-night dancing'
     ],
     popular: false,
-    image: 'images/before-after-2.jpg',
+    image: 'images/matric-farewell.jpg',
     flyerHighlight: 'Special Occasion',
   },
   {
@@ -92,7 +92,7 @@ export const SERVICES: ServiceItem[] = [
       'All-day sweat and humidity resistance'
     ],
     popular: false,
-    image: 'images/before-after-3.jpg',
+    image: 'images/evening-glam.jpg',
   },
   {
     id: 'luxe-combo',
@@ -178,6 +178,7 @@ export const WORKBOOK_TRANSFORMATIONS: TransformationItem[] = [
   { id: 'trans-5', image: 'images/before-after-5.jpg' },
   { id: 'trans-6', image: 'images/before-after-6.jpg' },
   { id: 'trans-7', image: 'images/before-after-7.jpg' },
+  { id: 'trans-8', image: 'images/before-after-8.jpg' },
 ];
 
 export const ABOUT_STORY = {
