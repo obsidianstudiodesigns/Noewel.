@@ -32,13 +32,15 @@ export const SERVICES: ServiceItem[] = [
     priceNote: 'includes bridal trial',
     description: 'Timeless, romantic, and photo-ready bridal makeup designed to withstand tears of joy and last throughout your entire unforgettable wedding celebration.',
     features: [
-      'Undertone analysis',
+      'Bridal makeup application on wedding day',
+      'Bridal trial',
       'Premium lightweight mink-effect lashes',
-      'Bridal trial'
+      'Undertone analysis'
     ],
     popular: true,
     image: 'images/bridal-glamour.jpg',
-    imagePosition: 'object-[center_12%]',
+    imagePosition: 'object-[center_22%]',
+    imageHeight: 'h-96',
     flyerHighlight: 'Bridal Artistry',
   },
   {
@@ -144,8 +146,8 @@ export const SERVICES: ServiceItem[] = [
       'Velvety quick-absorption finish'
     ],
     popular: false,
-    image: 'images/sunbed-lotion-mockup.jpg',
-    imageFit: 'contain',
+    image: 'images/sunbed-lotion-flyer.jpg',
+    imageFit: 'full',
     flyerHighlight: 'Bestseller Retail · R150',
   },
   {
@@ -163,8 +165,8 @@ export const SERVICES: ServiceItem[] = [
       'Please note: This hyper tingle lotion is not for sensitive skin'
     ],
     popular: false,
-    image: 'images/hot-tingle-mockup.jpg',
-    imageFit: 'contain',
+    image: 'images/hot-tingle-flyer.jpg',
+    imageFit: 'full',
     flyerHighlight: 'Glow Hotter · R220',
   },
 ];

@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WorkbookGallery } from './components/WorkbookGallery';
-import { TanningLotionFeature } from './components/TanningLotionFeature';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -55,16 +54,6 @@ export default function App() {
     setIsBookingModalOpen(true);
   };
 
-  const handleOrderLotion = (productId: 'tanning-lotion' | 'hot-tingle-lotion') => {
-    setSelectedServiceId(productId);
-    setInitialBookingNotes(
-      productId === 'hot-tingle-lotion'
-        ? 'I would like to order the HOT Tingle Tanning Lotion (R220, 100ml).'
-        : 'I would like to order the Premium Sunbed Tanning Lotion (R150, 100ml).'
-    );
-    setIsBookingModalOpen(true);
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#2C2420] relative selection:bg-[#E8D8C3] selection:text-[#2C2420]">
       {/* Navigation Header */}
@@ -83,9 +72,6 @@ export default function App() {
 
         {/* Client Workbook (Before & After Transformations 1 - 4) */}
         <WorkbookGallery />
-
-        {/* Exclusive Retail Product Feature (Flyer 1 Sunbed Tanning Lotion) */}
-        <TanningLotionFeature onOrderLotion={handleOrderLotion} />
 
         {/* Contact, Location & Studio Details */}
         <ContactSection onOpenBooking={() => handleOpenBooking()} />

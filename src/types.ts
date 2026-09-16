@@ -10,7 +10,8 @@ export interface ServiceItem {
   features: string[];
   popular?: boolean;
   image?: string;
-  imageFit?: 'cover' | 'contain';
+  imageFit?: 'cover' | 'contain' | 'full';
+  imageHeight?: string;
   imagePosition?: string;
   flyerHighlight?: string;
 }

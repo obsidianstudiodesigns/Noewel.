@@ -96,26 +96,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               {service.image && (
                 <div
                   className={`w-full overflow-hidden relative ${
-                    service.imageFit === 'contain' ? 'h-80 bg-[#EADCCB] flex items-center justify-center py-4' : 'h-48 bg-[#EFE8DD]'
+                    service.imageFit === 'full'
+                      ? 'bg-[#EADCCB]'
+                      : `${service.imageHeight ?? 'h-48'} bg-[#EFE8DD]`
                   }`}
                 >
-                  {service.imageFit === 'contain' ? (
-                    <>
-                      {/* Blurred backdrop of the same mockup fills the box; full mockup shown on top */}
-                      <img
-                        src={service.image}
-                        alt=""
-                        aria-hidden="true"
-                        className="absolute inset-0 w-full h-full object-cover scale-125 blur-xl opacity-80"
-                      />
-                      <div className="absolute inset-0 bg-[#FAF7F2]/15" />
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                        className="relative h-full w-auto max-w-[85%] object-cover rounded-lg ring-1 ring-white/40 drop-shadow-[0_12px_16px_rgba(60,35,15,0.35)] group-hover:scale-105 transition-transform duration-500"
-                        referrerPolicy="no-referrer"
-                      />
-                    </>
+                  {service.imageFit === 'full' ? (
+                    // Full flyer, shown uncropped
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="block w-full h-auto group-hover:scale-[1.03] transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
                   ) : (
                     <>
                       <img

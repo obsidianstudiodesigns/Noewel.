@@ -153,12 +153,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenBooking })
                   <strong className="text-[#362B25] font-semibold block mb-0.5">
                     💄 Makeup Appointment Preparation
                   </strong>
-                  Arrive with a freshly cleansed face and your favorite daily moisturizer applied. If you have inspiration photos or your dress fabric/color, please share them during consultation!
+                  Arrive with a freshly cleansed face and your favorite daily moisturizer applied. If you have inspiration photos or your dress fabric/color, share them prior to your consultation.
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-[#F7F1E7] border-l-3 border-[#A8752D]">
                   <strong className="text-[#362B25] font-semibold block mb-0.5">
-                    🧴 Sunbed Tanning Lotion (R150)
+                    🧴 Premium Sunbed Tanning Lotions
                   </strong>
                   Apply evenly prior to your sunbed session to stimulate collagen synthesis and maximize deep melanin development.
                 </div>
